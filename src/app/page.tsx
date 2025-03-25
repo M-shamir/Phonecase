@@ -115,7 +115,7 @@ const userReviews = [
 ];
 
 // Render Stars Function
-const renderStars = (rating) => {
+const renderStars = (rating:number) => {
   return Array.from({ length: 5 }, (_, index) => (
     <Star 
       key={index} 
@@ -337,7 +337,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex">{renderStars(review.rating)}</div>
-            <p className="text-gray-300 italic">"{review.review}"</p>
+            <p className="text-gray-300 italic">{review.review}</p>
             <div className="flex items-center justify-between">
               <span className="text-sm text-gray-500">Verified Purchase</span>
               <span className="text-sm text-gray-500 bg-gray-800 px-2 py-1 rounded-full">
