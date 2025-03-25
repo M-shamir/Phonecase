@@ -265,11 +265,7 @@ export default function Home() {
           >
             <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur-2xl opacity-50"></div>
             <div className="relative">
-              <img 
-                src="/api/placeholder/500/600" 
-                alt="Phone Case Product" 
-                className="rounded-2xl relative z-10 shadow-2xl"
-              />
+              
             </div>
           </div>
         </div>
