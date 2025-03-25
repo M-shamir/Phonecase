@@ -5,6 +5,7 @@ import {
   Linkedin, Instagram, Facebook, Twitter, 
   Star, Menu, X 
 } from 'lucide-react';
+import Image from 'next/image';
 
 // Custom Hook for Scroll-based Animation
 const useScrollAnimation = () => {
@@ -312,43 +313,45 @@ export default function Home() {
 
       {/* User Reviews Section */}
       <section id="reviews" className="container mx-auto px-6 py-16">
-        <h3
-          className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
-          data-animate
-        >
-          What Our Users Say
-        </h3>
-        <div className="grid md:grid-cols-3 gap-8">
-          {userReviews.map((review, index) => (
-            <div
-              key={review.id}
-              className={`bg-gray-900 rounded-2xl p-6 space-y-4 border border-gray-800`}
-              data-animate
-              style={{ transitionDelay: `${index * 200}ms` }}
-            >
-              <div className="flex items-center space-x-4">
-                <img 
-                  src={review.image} 
-                  alt={review.name} 
-                  className="w-12 h-12 rounded-full border-2 border-gray-700"
-                />
-                <div>
-                  <h4 className="font-bold text-white">{review.name}</h4>
-                  <p className="text-gray-400 text-sm">{review.username}</p>
-                </div>
-              </div>
-              <div className="flex">{renderStars(review.rating)}</div>
-              <p className="text-gray-300 italic">"{review.review}"</p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">Verified Purchase</span>
-                <span className="text-sm text-gray-500 bg-gray-800 px-2 py-1 rounded-full">
-                  {review.product}
-                </span>
+      <h3
+        className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
+        data-animate
+      >
+        What Our Users Say
+      </h3>
+      <div className="grid md:grid-cols-3 gap-8">
+        {userReviews.map((review, index) => (
+          <div
+            key={review.id}
+            className={`bg-gray-900 rounded-2xl p-6 space-y-4 border border-gray-800`}
+            data-animate
+            style={{ transitionDelay: `${index * 200}ms` }}
+          >
+            <div className="flex items-center space-x-4">
+              <Image 
+                src={review.image} 
+                alt={review.name} 
+                width={48}
+                height={48}
+                className="w-12 h-12 rounded-full border-2 border-gray-700"
+              />
+              <div>
+                <h4 className="font-bold text-white">{review.name}</h4>
+                <p className="text-gray-400 text-sm">{review.username}</p>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
+            <div className="flex">{renderStars(review.rating)}</div>
+            <p className="text-gray-300 italic">"{review.review}"</p>
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-500">Verified Purchase</span>
+              <span className="text-sm text-gray-500 bg-gray-800 px-2 py-1 rounded-full">
+                {review.product}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
       {/* Footer with Social Media */}
       <footer className="bg-gray-900 py-12">
