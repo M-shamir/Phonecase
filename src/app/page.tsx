@@ -13,7 +13,7 @@ const useScrollAnimation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const topOffset = window.scrollY;
+      // const topOffset = window.scrollY;
       const windowHeight = window.innerHeight;
 
       document.querySelectorAll('[data-animate]').forEach(element => {
