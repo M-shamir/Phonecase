@@ -313,7 +313,7 @@ export default function Home() {
         className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
         data-animate
       >
-        What Our Users Say
+        Customer Reviews
       </h3>
       <div className="grid md:grid-cols-3 gap-8">
         {userReviews.map((review, index) => (
