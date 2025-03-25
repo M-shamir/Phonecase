@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Phone Case",
-  description: "Phone Case",
+  description: "No.1 Phone Case Seller in Kerala",
 };
 
 export default function RootLayout({
